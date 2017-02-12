@@ -1,0 +1,517 @@
+
+.wrapper{
+/*	width: 375px;
+	height: 667px;*/
+	/*width: 700px;*/
+	/*height: 1067px;*/
+	background: url("../images/2.jpg") no-repeat ;
+	background-size: cover;
+	position: absolute;
+}
+.music-palyer{
+	width: 100%;
+	height: 100%;
+}
+.music-palyer-header{
+	width: 100%;
+	height: 8%;
+	text-align: center;
+
+}
+.music-palyer-header .channel-icon{
+	width: 15%;
+	height:100%;
+	/*position: absolute;*/
+	float: left;
+	padding: 1.45rem 1.2rem;
+	font-family: iconfont;
+	color: #fff;
+}
+.music-palyer-header .song-info{
+	width: 70%;
+	height: 100%;
+	float:left;
+	text-align: left;
+	font-size: 1rem;
+	border-bottom: #fff solid 1px;
+
+}
+.music-palyer-header .song-info p{
+	color: #fff;
+}
+.music-palyer-header .song-info .song-info-name{
+	margin-top:0.6rem; 
+}
+.music-palyer-header .search-icon {
+	width: 15%;
+	height:100%;
+	font-family: iconfont;
+	color: #fff;
+	float: right;
+	padding: 1.45rem 1.2rem;
+}
+
+.music-palyer-main{
+	position: relative;
+	height: 72%;
+	overflow: hidden;
+}
+.music-palyer-turtntable-container{
+	position: relative;
+	height: 85%
+}
+.music-palyer-main .handle{
+	 position: absolute;
+    top: -0.21rem;
+    left: 40%;
+    -webkit-transform-origin: 0.86rem 0;
+        -ms-transform-origin: 0.86rem 0;
+            transform-origin: 0.86rem 0;
+    height: 42.6%;
+    width: 32%;
+    background: url(../images/needle.png) no-repeat center center;
+    background-size: cover;
+    z-index: 99;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: rotate(-25deg);
+}
+
+.music-palyer-main  .play{
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+    -webkit-transform: rotate(-7deg);
+}
+.music-palyer-main .turtntable{
+	height:65%;
+	width: 70%;/* 兼容性时要改*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: url("../images/disc-ip6.png") no-repeat center center;
+	background-size: cover;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+	border-radius: 14.2rem;
+
+}
+.music-palyer-main .turtntable .turtntable-cover{
+	height: 100%;
+	width:100%;
+}
+.music-palyer-main .turtntable .turtntable-disk{
+	height:65%;
+	width: 68%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: url("../images/timg4.jpg") no-repeat center center;
+	/*-webkit-transform: translate(-50%, -50%);*/
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	background-size: cover;
+	border-radius: 14.2rem;
+
+}
+ .music-palyer-main .turtntable .active{
+	-webkit-animation-name: rotate;
+	        animation-name: rotate;
+    -webkit-animation-duration: 25s;
+            animation-duration: 25s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
+.lyric{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:85%;
+	width: 100%;
+	overflow: hidden;
+	display: none;
+}
+.lyric-container{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin-left: 1rem；;
+	margin-right:1rem;
+	text-align: center;
+	font-family:'微软雅黑',  Arial;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: rgba(170, 170, 170, 0.7);
+}
+.light-lyric {
+    color: #fff;
+}
+.audio-container{
+	position: absolute;
+	top:85%;
+	width: 100%;
+	text-align: center;
+
+}
+
+.volume{
+	display: inline-block;
+	text-align: center;
+}
+.volume-icon{
+	display: inline-block;
+	font-family: "iconfont";
+	color: #fff;
+    font-size: 1.8rem;
+
+}
+.volume-bar{
+	display: inline-block;
+	height: 1.8rem; 
+	width: 114px;
+
+}
+/*因为js里面需要知道进度条具体的值，这里使用px作为单位*/
+.volume-bar .volume-bar-track{
+	display: inline-block;
+	height: 2px; 
+	width: 114px;
+    border-radius: 1px;
+    background-color: rgba(102, 102, 102, 0.6);
+    vertical-align:  text-top;
+    margin-top :2px;	
+}
+.volume-bar .volume-bar-line{
+	display: inline-block;
+	float: left;
+	 height: 2px;
+    width: 100px;
+    border-radius: 1px 0 0 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.volume-bar .volume-bar-handle{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	display: inline-block;
+	float: right;
+    margin: -6px 0;
+    height: 14px;
+    width: 14px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.lyric-icon{
+	display: inline-block;
+	font-family: iconfont;
+	font-size: 2.285rem;
+	color: #fff;
+	margin-left: 2rem;
+}
+.progress{
+	text-align: center;
+}
+.progress-currenttime{
+	height: 1.8rem; 
+	display: inline-block;
+	color: #fff;
+	line-height: 1.8rem;
+}
+.progress-bar{
+	display: inline-block;
+	height: 1.8rem; 
+	width: 214px;
+}
+/*因为js里面需要知道进度条具体的值，这里使用px作为单位*/
+.progress-bar .progress-bar-track{
+
+	display: inline-block;
+	position: relative;
+	height: 2px; 
+	width: 214px;
+    border-radius: 1px;
+    background-color: rgba(102, 102, 102, 0.6);
+    vertical-align:  middle;
+    margin-top :2px;
+}
+.progress-bar .progress-bar-line{
+	display: inline-block;
+	float: left;
+	height: 2px;
+    width: 0px;
+    border-radius: 1px 0 0 1px;
+    background-color: #F60505;
+}
+.progress-bar .progress-bar-handle{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: inline-block;
+	float: left;
+    margin: -6px 0;
+    height: 14px;
+    width: 14px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.progress-bar-totaltime{
+	height: 1.8rem; 
+	display: inline-block;
+	color: #fff;
+	line-height: 1.8rem;
+}
+.music-palyer-footer{ 
+	text-align: center;
+	height: 20%;
+}
+.sequence{
+	display: inline-block;
+	font-family: iconfont;
+	color: #fff;
+	font-size: 2.285rem;
+	margin: 3.57rem 0.714rem;
+	/*cursor: pointer;*/
+}
+.pre-song{
+	display: inline-block;
+	font-family: iconfont;
+	color: #fff;
+	font-size: 2.285rem;
+	margin: 3.57rem 0.714rem;
+	/*cursor: pointer;*/
+}
+.play-ctrl{
+	display: inline-block;
+	font-family: iconfont;
+	color: #fff;
+	font-size: 3.429rem;
+	margin: 3.57rem 0.714rem;
+	/*cursor: pointer;*/
+}
+.next-song{
+	display: inline-block;
+	font-family: iconfont;
+	color: #fff;
+	font-size: 2.285rem;
+	margin: 3.57rem 0.714rem;
+	/*cursor: pointer;*/
+}
+.play-list-icon{
+	display: inline-block;
+	font-family: iconfont;
+	color: #fff;
+	font-size: 2.285rem;
+	margin: 3.57rem 0.714rem;
+	/*cursor: pointer;*/
+}
+.play-list{
+	position: absolute;
+	top: 60%;
+	left: 0;
+	background: #6C6666;
+	height:40%;
+	width: 100%;
+	overflow: scroll;
+	display: none;
+}
+.play-list-close{
+	border-bottom: #898686 solid 1px ;
+	width: 100%;
+	background: #080908;
+	color: #fff;
+}
+
+
+.play-list-close span{
+	text-align: center;
+	font-size: 1.5rem;
+	float: left;
+	line-height: 3rem;
+	height: 3rem;
+	width: 90%;
+}
+.play-list-close-icon{
+
+	display: inline-block;
+	float: right;
+	
+}
+.play-list-close-icon .icon-guanbi2{
+	font-family: iconfont;
+	line-height: 3rem;
+	height: 3rem;
+	font-size: 1.5rem;
+	margin-right: 0.5rem;
+}
+.play-list .play-list-body li{
+	border-bottom: #898686 solid 1px ;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	height: 3rem;
+	width: 100%;
+	overflow: hidden;
+	background: #6C6666;
+	color: #fff;
+
+}
+.play-list .play-list-body  .clicked{
+	color: #FC0606;
+}
+.play-list .play-list-body li span{
+	display: inline-block;
+	overflow: hidden;
+	width: 90%;
+}
+.play-list .play-list-body li i{
+	font-family: iconfont;
+	float: right;
+	margin-right: 0.5rem;
+}
+
+.ranking-list{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #595555;
+	height:100%;
+	width: 80%;
+	overflow: scroll;
+	display: none;
+	z-index: 101;
+}
+.ranking-list-close{
+	border-bottom: #898686 solid 1px ;
+	background: #080908;
+	color: #fff;
+	position: fixed;
+	width: 80%;
+}
+.ranking-list-close span{
+	text-align: center;
+	font-size: 1.5rem;
+	float: left;
+	line-height: 3rem;
+	height: 3rem;
+	width: 85%;
+}
+.ranking-list-close-icon{
+
+	display: inline-block;
+	float: right;
+	
+}
+.ranking-list-close-icon .icon-guanbi1{
+	font-family: iconfont;
+	line-height: 3rem;
+	height: 3rem;
+	font-size: 1.5rem;
+	margin-right: 0.5rem;
+}
+
+.ranking-list .ranking-list-body {
+	border-bottom: #898686 solid 1px ;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	width: 100%;
+	overflow: hidden;
+	background: #595555;
+	color: #fff;
+	margin-top: 3rem;
+
+}
+.ranking-list .ranking-list-body  .clicked{
+	color: #FC0606;
+}
+.ranking-list .ranking-list-body div{
+	border-bottom: #898686 solid 1px ;
+	overflow: hidden;
+}
+.ranking-list .ranking-list-body  p{
+	font-size: 1rem;
+	background: #6C6666;
+	border-bottom: #898686 solid 1px ;
+	
+}
+
+.search{
+	position: absolute;
+	top:0;
+	left: 15%;
+	width: 0;
+	margin-top: 1rem;
+	/*background: red;*/
+	z-index: 100;
+	display: none;
+}
+.search-input{
+	height: 2rem;
+	width: 100%;
+	border-radius: 1rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	padding: 0 1rem;
+}
+.search-result{
+	margin-top: 1rem;
+	border-radius: 0.5rem;
+	background: #fff;
+	/*padding: 1rem;*/
+	overflow: hidden;
+}
+.search-result p{
+	line-height: 2rem;
+	font-size: 0.9rem;
+	width: 100%;
+	overflow: hidden;
+}
+.search-result  .clicked{
+	color: #FC0606;
+}
+
+@media screen and (min-width:360px) and (max-width: 450px){
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width:451px) and (max-width: 550px){
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+    }
+}

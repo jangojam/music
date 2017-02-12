@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music</title>
+	<meta charset="utf-8">
+	<meta content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<!-- 	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection"> -->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="music-palyer">
+			<header class="music-palyer-header clearfloat">
+				<div class="channel-icon icon-menu"></div>
+				<div class="song-info">
+					<p class="song-info-name"></p>
+					<p class="song-info-singer"></p>
+				</div>
+				<div class="search-icon icon-sousuo_sousuo"></div>
+		    </header>
+		    <main class="music-palyer-main">
+			    <div class="music-palyer-turtntable-container ">
+			    	<div class="handle "></div>
+					<div class="turtntable ">
+						<div class="turtntable-cover ">
+							<div class="turtntable-disk"></div>
+						</div>
+					</div>
+			    </div>
+			    <div class="lyric">
+			    	<div class="lyric-container"></div>
+			    </div>
+				<div class="audio-container">
+					<audio class="audio"></audio>
+					<div class="volume">
+						<div class="volume-icon icon-yinliang2"></div>
+						<div class="volume-bar">
+							<div class="volume-bar-track clearfloat">
+								<div class="volume-bar-line"></div>
+								<div class="volume-bar-handle"></div>
+							</div>
+						</div>
+					</div>
+					<div class="lyric-icon icon-geci"></div>
+					<div class="progress">
+						<div class="progress-currenttime">0:00</div>
+						<div class="progress-bar">
+							<div class="progress-bar-track clearfloat">
+								<div class="progress-bar-line"></div>
+								<div class="progress-bar-handle"></div>
+							</div>
+						</div>
+						<div class="progress-bar-totaltime">0:00</div>
+					</div>
+				</div>
+				
+				
+		    </main>
+		    <footer class="music-palyer-footer">
+		    	<div class="sequence icon-shunxubofang"></div>
+		    	<div class="pre-song icon-iconfont34"></div>
+		    	<div class="play-ctrl icon-bofang"></div>
+		    	<div class="next-song icon-iconfont33"></div>
+		    	<div class="play-list-icon icon-liebiao"></div>
+		    </footer>
+		    <!-- 播放列表 -->
+		    <div class="play-list">
+		    	<div class="play-list-close clearfloat">
+		    		<span class="play-list-close-title">播放列表</span>
+		    		<div class="play-list-close-icon ">
+		    			<div class="icon-guanbi2"></div>
+		    		</div>
+		    	</div>
+		    	<ul class="play-list-body"></ul>
+		    	
+		    </div>
+		    <div class="ranking-list">
+		    	<div class="ranking-list-close clearfloat">
+		    		<span class="ranking-list-close-title">排行榜</span>
+		    		<div class="ranking-list-close-icon">
+		    			<div class="icon-guanbi1"></div>
+		    		</div>
+		    	</div>
+		    
+		    	<div class="ranking-list-body">
+		    		<div class="ranking-list-body-0">新歌榜</div>
+		    		<div class="ranking-list-body-1">热歌榜</div>
+		    		<div class="ranking-list-body-2">摇滚榜</div>
+		    		<div class="ranking-list-body-3">爵士</div>
+		    		<div class="ranking-list-body-4">流行</div>
+		    		<div class="ranking-list-body-5">欧美金曲榜</div>
+		    		<div class="ranking-list-body-6">经典老歌榜</div>
+		    		<div class="ranking-list-body-7">情歌对唱榜</div>
+		    		<div class="ranking-list-body-8">影视金曲榜</div>
+		    		<div class="ranking-list-body-9">网络歌曲榜</div>
+		    	</div>
+		    </div>
+		    <div class="search">
+		    	<input class="search-input" type="search" placeholder="按回车确认" name="input" >
+		    	<div class="search-result"></div>
+		    </div>
+		</div>
+	</div>	
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/draggabilly.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	
+</body>
+</html>
